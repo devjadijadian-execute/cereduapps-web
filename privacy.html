@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat Ketentuan & Kebijakan Privasi - Ceredu Apps</title>
+    <style>
+        :root {
+            --primary-color: #2B6CB0;
+            --text-color: #2D3748;
+            --bg-color: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-top: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #4A5568;
+            margin-top: 20px;
+        }
+
+        p, li {
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .meta-date {
+            font-style: italic;
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background-color: #EBF8FF;
+            color: #2B6CB0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #A0AEC0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+        <h1>Kebijakan Privasi</h1>
+        <p><strong>Ceredu Apps</strong></p>
+        <p class="meta-date">Privasi Anda adalah prioritas kami — data Anda, kendali Anda</p>
+
+        <h2>1. Pendahuluan</h2>
+        <p>Kebijakan Privasi ini menjelaskan bagaimana Ceredu Apps ("kami", "Aplikasi") mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi kami. Kami berkomitmen untuk transparan mengenai praktik data dan menghormati privasi Anda, terutama karena Aplikasi ini dirancang untuk mendukung produktivitas bisnis Anda sehari-hari.</p>
+
+        <h2>2. Prinsip Privasi Kami</h2>
+        <p>Ceredu Apps dibangun dengan prinsip <em>privacy-first</em>:</p>
+        <ul>
+            <li>Data pertama-tama disimpan di perangkat Anda (offline-first).</li>
+            <li>Kami tidak meminta izin yang tidak diperlukan untuk fungsi inti Aplikasi.</li>
+            <li>Kami tidak pernah meminta izin lokasi.</li>
+            <li>Kami tidak pernah meminta izin baca/tulis penyimpanan eksternal secara langsung — Aplikasi menggunakan Storage Access Framework (SAF) dan MediaStore Android yang lebih aman.</li>
+            <li>Barcode scanning menggunakan ML Kit on-device processing — tidak ada data kamera atau barcode yang dikirim ke server eksternal.</li>
+        </ul>
+
+        <h2>3. Informasi yang Dikumpulkan</h2>
+        
+        <h3>3.1 Data yang Disimpan Lokal di Perangkat Anda</h3>
+        <p>Data berikut disimpan sepenuhnya di perangkat Anda menggunakan database lokal (Room) dan tidak dikirimkan ke server manapun tanpa izin eksplisit Anda:</p>
+        <ul>
+            <li>Data resi: nomor resi, status pengiriman, nama kurir, dan informasi sesi serah terima.</li>
+            <li>Data sesi handover: informasi sesi serah terima ke kurir, termasuk tanda tangan digital (jika digunakan) dan jejak audit aktivitas.</li>
+            <li>Template label dan template cetak kustom yang Anda buat.</li>
+            <li>Ukuran kertas kustom yang Anda simpan.</li>
+            <li>Profil toko yang Anda atur.</li>
+            <li>Riwayat dokumen dan file yang pernah Anda buka melalui Aplikasi (URI-based, bukan salin file).</li>
+        </ul>
+
+        <h3>3.2 Izin Aplikasi dan Tujuannya</h3>
+        <p>Aplikasi meminta izin berikut dengan tujuan yang spesifik:</p>
+        <ul>
+            <li><strong>Bluetooth (BLUETOOTH_CONNECT/SCAN, tanpa akses lokasi):</strong> digunakan semata-mata untuk mendeteksi dan terhubung ke printer thermal Bluetooth. Kami menggunakan flag <code>neverForLocation</code> untuk memastikan Bluetooth tidak dipakai untuk pelacakan lokasi.</li>
+            <li><strong>Internet:</strong> digunakan untuk koneksi cetak WiFi/IPP ke printer jaringan lokal, serta untuk memuat iklan AdMob (varian free) dan integrasi Firebase di masa mendatang (Fase 2).</li>
+            <li><strong>ACCESS_NETWORK_STATE & ACCESS_WIFI_STATE:</strong> digunakan untuk memeriksa status koneksi WiFi sebelum mengirim pekerjaan cetak.</li>
+            <li><strong>CHANGE_WIFI_MULTICAST_STATE:</strong> digunakan untuk penemuan printer otomatis melalui mDNS (Multicast DNS) di jaringan lokal.</li>
+            <li><strong>Kamera (CAMERA):</strong> digunakan untuk memindai barcode nomor resi menggunakan ML Kit. Pemrosesan dilakukan sepenuhnya di perangkat — tidak ada gambar atau data kamera yang dikirimkan ke server eksternal.</li>
+            <li><strong>Notifikasi (POST_NOTIFICATIONS, Android 13+):</strong> digunakan untuk menampilkan notifikasi status pekerjaan cetak.</li>
+        </ul>
+
+        <h3>3.3 Data yang Dikumpulkan oleh Pihak Ketiga</h3>
+        <p>Komponen pihak ketiga berikut mungkin mengumpulkan data sesuai kebijakan privasi masing-masing:</p>
+        <ul>
+            <li><strong>Google AdMob (varian free):</strong> menampilkan iklan banner dan dapat mengumpulkan data untuk keperluan penargetan iklan sesuai Kebijakan Privasi Google. Anda dapat mengelola preferensi iklan melalui pengaturan perangkat Android Anda.</li>
+            <li><strong>Google Firebase (direncanakan di Fase 2):</strong> setelah diaktifkan, Firebase Crashlytics dapat mengumpulkan laporan crash anonim, dan Firebase Analytics dapat mengumpulkan data penggunaan anonim untuk membantu kami meningkatkan Aplikasi. Implementasi ini direncanakan bersifat opt-in dan menghormati privasi pengguna.</li>
+            <li><strong>Google ML Kit (Barcode Scanning):</strong> pemrosesan barcode dilakukan sepenuhnya on-device. Google ML Kit tidak mengirimkan data gambar atau barcode ke server Google.</li>
+        </ul>
+
+        <h2>4. Cara Kami Menggunakan Informasi</h2>
+        <p>Data yang tersimpan di perangkat Anda digunakan semata-mata untuk:</p>
+        <ul>
+            <li>Menjalankan fitur inti Aplikasi: manajemen resi, pencetakan, dan pengelolaan sesi handover.</li>
+            <li>Menyimpan preferensi dan konfigurasi Anda (template, ukuran kertas, profil toko).</li>
+            <li>Menghasilkan dokumen PDF berita acara handover sesuai permintaan Anda.</li>
+        </ul>
+        <p>Kami tidak menggunakan data Anda untuk:</p>
+        <ul>
+            <li>Profiling atau analisis perilaku pengguna yang bersifat invasif.</li>
+            <li>Penjualan data kepada pihak ketiga.</li>
+            <li>Penargetan iklan berbasis konten resi atau aktivitas bisnis Anda.</li>
+        </ul>
+
+        <h2>5. Penyimpanan dan Keamanan Data</h2>
+        <p>Semua data operasional Anda (resi, sesi, template) disimpan secara lokal di perangkat Anda menggunakan Room Database (SQLite). Data ini hanya dapat diakses oleh Aplikasi Ceredu Apps dan tidak dapat diakses oleh aplikasi lain.</p>
+        <p>Untuk keamanan sesi handover, Aplikasi menyediakan fitur PIN lock yang menggunakan hash SHA-256 — PIN Anda tidak disimpan dalam bentuk teks biasa. Tanda tangan digital untuk serah terima resi disimpan sebagai file gambar di direktori cache aplikasi.</p>
+        <p><strong>Penting:</strong> Kami saat ini belum mengimplementasikan sinkronisasi cloud. Jika Anda menghapus Aplikasi atau melakukan factory reset, data lokal Anda akan terhapus. Kami menyarankan Anda untuk melakukan ekspor PDF/CSV secara berkala sebagai cadangan.</p>
+
+        <h2>6. Berbagi Data dengan Pihak Ketiga</h2>
+        <p>Kami tidak menjual, menyewakan, atau menukar informasi pribadi Anda dengan pihak ketiga manapun. Satu-satunya berbagi data yang terjadi adalah:</p>
+        <ul>
+            <li>Dengan Google AdMob, untuk keperluan penyajian iklan pada varian free, sesuai kebijakan Google.</li>
+            <li>Dengan printer yang Anda pilih, di mana Aplikasi mengirimkan data dokumen/resi yang Anda minta untuk dicetak melalui jaringan lokal (WiFi/Bluetooth). Data ini tidak meninggalkan jaringan lokal Anda.</li>
+        </ul>
+
+        <h2>7. Hak-Hak Anda</h2>
+        <p>Karena data Anda disimpan secara lokal, Anda memiliki kendali penuh atas data tersebut:</p>
+        <ul>
+            <li><strong>Hak Akses:</strong> Anda dapat mengekspor seluruh data resi dan sesi handover dalam format PDF atau CSV kapan saja, tanpa batasan.</li>
+            <li><strong>Hak Hapus:</strong> Anda dapat menghapus resi, sesi, template, atau profil toko langsung dari dalam Aplikasi. Menghapus Aplikasi dari perangkat akan menghapus semua data lokal.</li>
+            <li><strong>Hak Portabilitas:</strong> Ekspor PDF/CSV tersedia tanpa watermark dan tanpa kuota sebagai bagian dari komitmen fitur gratis kami.</li>
+        </ul>
+
+        <h2>8. Privasi Anak-Anak</h2>
+        <p>Ceredu Apps tidak dirancang untuk atau ditujukan kepada anak-anak di bawah 13 tahun. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak-anak di bawah 13 tahun.</p>
+
+        <h2>9. Perubahan Kebijakan Privasi</h2>
+        <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu, terutama seiring dengan penambahan fitur baru (seperti integrasi Firebase di Fase 2). Perubahan signifikan akan diinformasikan melalui pembaruan Aplikasi di Google Play Store. Kami mendorong Anda untuk meninjau kebijakan ini secara berkala.</p>
+
+        <h2>10. Kontak</h2>
+        <p>Jika Anda memiliki pertanyaan, kekhawatiran, atau permintaan terkait Kebijakan Privasi ini atau penanganan data Anda, silakan hubungi kami melalui halaman Google Play Store Ceredu Apps atau melalui saluran komunikasi yang tercantum di profil pengembang.</p>
+    </div>
+    <div class="footer-note">
+
+        <p>Ceredu Apps — Cetak resi tanpa drama.</p>
+        <p style="font-size: 12px;">Dokumen ini berlaku untuk semua varian Ceredu Apps (Free dan Premium).</p>
+    </div>
+</div>
+
+</body>
+</html>
